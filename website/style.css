@@ -1,0 +1,307 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #2e293a;
+    color: #fff;
+}
+#header
+{
+    width: 100%;
+    height: 100vh;
+}
+.container{
+    padding: 10px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width: 140px;
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+}
+nav ul li a:after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.header-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    padding-left: 10%;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #5580af
+}
+.bgimage {
+    width: 100%;
+    height: 90vh;
+    background: url('images/IMG_0091.jpg') no-repeat center center;
+    background-size: cover;
+}
+/* -------------about--------------- */
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+    max-width: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+    max-width: 60%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+    color: #ec5b08;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: relative;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #5580af;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 10px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    color: #2e293a;
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #5580af}
+
+.button:active {
+    background-color: #2e293a;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* ------------------projects----------------- */
+#projects{
+    padding: 30px 0;
+}
+.projects-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+    align-items: start;
+}
+
+.card {
+    width: 270px;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: white;
+    color: black;
+  }
+  
+  .card img {
+    width: 60px;
+    height: auto;
+  }
+
+/* Initial state of the paragraphs and icons is hidden */
+.card .content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+  }
+  
+  /* When expanded, the max-height is increased to reveal the content */
+  .card .content.expanded {
+    max-height: 1000px; /* Adjust as needed */
+  }
+  
+  /* Ensure the title and logo are always visible */
+  .card h3, .card img {
+    display: inline-block; /* or inline-block, depending on your layout */
+  }  
+
+  .portfolio-icons {
+    margin-top: 40px;
+  }
+
+  .portfolio-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+  }
+
+  .portfolio-icons a:hover {
+    color: #3082e6;
+    transform: translateY(-5px);
+  }
+  
+  /* --------------css for smaller screens--------------- */
+nav .fas{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .bgimage{
+        background-image: url(images/IMG_0091.jpg);
+        background-position: 60% center;
+        background-attachment: scroll;
+    }
+    .header-text h1{
+        margin-bottom: 100%;
+        font-size: 25px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background: #5580af;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .about-col-1, .about-col-2 {
+        flex-basis: 100%;
+    }
+    .sub-title{
+        font-size: 30px;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-1 img {
+        width: 275%;
+        height: 100%;
+        object-fit: cover;
+    }    
+    .about-col-2{
+        font-size: 14px;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    .tab-links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .tab-titles {
+        display: flex;
+        overflow-x: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #888 transparent; 
+    }
+    
+    .tab-titles::-webkit-scrollbar {
+        height: 5px;
+    }
+    
+    .tab-titles::-webkit-scrollbar-thumb {
+        background: #888; 
+    }
+    
+}

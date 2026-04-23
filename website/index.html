@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang = "en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Rayyan Mridha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+
+  </head>
+  <body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/header_logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href = "#header">Home</a></li>
+                    <li><a href = "#about">About</a></li>
+                    <li><a href = "#projects">Projects</a></li>
+                    <li><a href = "#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+        </div>
+        <div class="bgimage">
+            <div class="header-text">
+                <h1>Hi, I'm <span>Rayyan Mridha</span>,<br>a computer scientist<br>from Los Angeles.</h1>
+            </div>
+        </div>
+</div>
+<!-- -------------about------------- -->
+<div id="about">
+  <div class="container">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="images/ray.png">
+      </div>
+      <div class="about-col-2">
+        <h1 class="sub-title">About me</h1>
+        <p>My passion for tech has made me interested in its long-term uses and how it affects other people. I continue to learn computer science to understand the foundation of how programs are built. Someday I hope to utilize these skills to make apps that can either entertain, educate, etc.</p>
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+          <p class="tab-links" onclick="opentab('accolades')">Accolades</p>
+          <p class="tab-links" onclick="opentab('links')">Links</p>
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+            <li><span>C++</span><br>Object-Oriented Programming & Data Structures and Algorithms</li>
+            <li><span>Java</span><br>Object-Oriented Programming & GUI</li>
+            <li><span>Python</span><br>Scripting & CSV Manipulation</li>
+            <li><span>Nvidia Omniverse</span><br>USD Composer, Omnigraph, Visual Scripting</li>
+            <li><span>HTML/CSS</span><br>This website!</li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="experience">
+          <ul>
+            <li><span>July 2025 - December 2025</span><br>Babel Street<br>Software Engineer Co-op</li>
+            <li><span>January 2025 - Present</span><br>Code4Community<br>Software Developer</li>
+            <li><span>July 2022 - June 2024</span><br>SCV Coderdojo<br>Mentor</li>
+            <li><span>September 2023 - January 2024</span><br>JPL/NASA<br>Research Intern</li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="education">
+          <ul>
+            <li><span>September 2024 - Present</span><br>Northeastern University</li>
+            <li><span>August 2021 - June 2024</span><br>Los Angeles Pierce College</li>
+            <li><span>August 2017 - June 2021</span><br>Granada Hills Charter High School</li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="accolades">
+          <ul>
+            <li><a href="https://www.coursera.org/account/accomplishments/verify/MJYER6VX974L?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" class="button">Intro to iOS App Development</a></li>
+            <li><a href="https://drive.google.com/file/d/1ASNDu2AJcgHW3vPXg1oQDyhBxZh1tHHG/view" class="button">AP Scholar Award</a></li>
+            <li><a href="https://www.coursera.org/account/accomplishments/verify/8CDT8YQDCJ95?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" class="button">Crash Course on Python</a></li>
+            <li><a href="https://drive.google.com/file/d/1vlSQCZzbX6rgzStsWnZWXfosMZB2gFfX/view" class="button">Coderdojo Mentor Certificate</a></li>
+          </ul>
+        </div>
+        <div class="tab-contents" id="links">
+          <ul>
+            <li><a href="https://github.com/rayyanmridha" class="button">Github</a></li>
+            <li><a href="https://www.linkedin.com/in/rayyanmridha/" class="button">LinkedIn</a></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
+<!-- ----------projects---------- -->
+<div id="projects">
+  <div class="container">
+    <h1 class="sub-title">My Projects</h1>
+    <div class="projects-list">
+      <div class="card" onclick="expandCard(this)">
+        <img src="images/javalogo.png">
+        <h3>Blackjack</h3>
+        <div class="content">
+        <p>The simple foundation of Blackjack built using a GUI from Java. There are only two actions the user can input to strategically win. Arithmetic operations are used to simulate a dealer and the terminal is used to output the outcome of the game.</p>
+        <div class="portfolio-icons">
+          <a href="https://github.com/rayyanmridha/Blackjack"><i class="fab fa-github"></i></a>
+          <a href="images/Blackjack-slideshow.png" data-lightbox="image-1"><i class="fas fa-image"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="card" onclick="expandCard(this)">
+        <img src="images/swiftlogo.png">
+        <h3>American Naturals</h3>
+        <div class="content">
+        <p>This is a online pharmceutical company started by my father where customers can browse for health products or request formulations according to their needs. I manage the entire site and keep everything updated.</p>
+        <div class="portfolio-icons">
+          <a href="https://github.com/rayyanmridha/AmericanNaturals"><i class="fab fa-github"></i></a>
+          <a href="images/AN-slideshow.png" data-lightbox="image-2"><i class="fas fa-image"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="card" onclick="expandCard(this)">
+        <img src="images/cpluslogo.png">
+        <h3>Math Mortal Kombat</h3>
+        <div class="content">
+        <p>This was my first-ever Hackathon project! This is a classic arcade game with a mathematical twist that is used to fight opponents instead. The project shows gives a glimpse into how object-oriented programming can be used for many different applications, including games.</p>
+        <div class="portfolio-icons">
+          <a href="https://github.com/rayyanmridha/MathMortalKombat"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/watch?v=_QKCFtSPdLM"><i class="fab fa-youtube"></i></a>
+          <a href="https://devpost.com/software/math-mortal-kombat"><i class="fas fa-link"></i></a>
+        </div>
+      </div>
+      </div>
+
+      <div class="card" onclick="expandCard(this)">
+        <img src="images/cpluslogo.png">
+        <h3>Market 2.0</h3>
+        <div class="content">
+        <p class="hidden">This project is an updated version of my first-ever project that I made. It uses all the same principles such as object-oriented programming but except this time there are a lot more advanced features. Some of these features include generating SKUs, keeping track of inventory, giving out a receipt for a sale and more. I have implements various attributes of OOP such as polymorphism, overriding operators, inheritance, and more.</p>
+        <div class="portfolio-icons">
+          <a href="https://github.com/rayyanmridha/Market-2.0"><i class="fab fa-github"></i></a>
+          <a href="https://www.youtube.com/watch?v=aJQrOBKwmgs"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- -----------contact---------- -->
+<div id="contact">
+  <div class="container" style="height: 500px; overflow: hidden;">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJXZWysh_Wf7qMc6Sb0jKCKvp2hPjXBsU1eDdXHnNOYsfIWA/viewform?embedded=true"
+            style="width: 100%; height: 100%; border: none;"
+            frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</div>
+
+
+
+<script>
+  var tablinks = document.getElementsByClassName("tab-links");
+  var tabcontents = document.getElementsByClassName("tab-contents");
+  function opentab (tabname)
+  {
+    for(tablink of tablinks)
+    {
+      tablink.classList.remove("active-link");
+    }
+    for(tabcontent of tabcontents)
+    {
+      tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+  }
+</script>
+
+<script>
+function expandCard(selectedCard) {
+  let content = selectedCard.querySelector('.content');
+  // Check if the clicked card is already expanded
+  if (content.classList.contains('expanded')) {
+    // If so, collapse it
+    content.classList.remove('expanded');
+  } else {
+    // If not, collapse all other cards first
+    document.querySelectorAll('.card .content').forEach(otherContent => {
+      otherContent.classList.remove('expanded');
+    });
+    // Then expand the clicked card
+    content.classList.add('expanded');
+  }
+}
+</script>
+
+<script>
+  var sidemenu = document.getElementById("sidemenu")
+  // Get all menu items
+var menuItems = document.querySelectorAll('nav ul li');
+
+function openmenu(){
+    sidemenu.style.right = "0";
+  }
+  function closemenu(){
+    sidemenu.style.right = "-200px";
+  }
+
+// Add click event to each menu item
+menuItems.forEach(function(item) {
+  item.addEventListener('click', function() {
+    // Close the menu
+    closemenu();
+  });
+});
+
+
+</script>
+
+</body>
+</html>
