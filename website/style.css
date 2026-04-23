@@ -69,7 +69,7 @@ nav ul li a:hover::after{
 .bgimage {
     width: 100%;
     height: 90vh;
-    background: url('images/IMG_0091.jpg') no-repeat center center;
+    background: url('images/IMG_0091.jpg') no-repeat center center fixed;
     background-size: cover;
 }
 /* -------------about--------------- */
