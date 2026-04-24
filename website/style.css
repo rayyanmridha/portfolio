@@ -225,7 +225,84 @@ nav ul li a:hover::after{
     color: #3082e6;
     transform: translateY(-5px);
   }
-  
+
+  /* --------------what I'm working on--------------- */
+  #working-on {
+    padding: 50px 0;
+    color: #ababab;
+  }
+
+  .activity-card {
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding: 25px 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid #5580af;
+    border-radius: 4px;
+    text-align: left;
+  }
+
+  #activity-repos a {
+    color: #5580af;
+    text-decoration: none;
+    border-bottom: 1px dotted #5580af;
+  }
+
+  #activity-repos a:hover {
+    color: #ec5b08;
+    border-bottom-color: #ec5b08;
+  }
+
+  .pulse-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ec5b08;
+    margin-left: 6px;
+    vertical-align: middle;
+    animation: pulse 2s ease-in-out infinite;
+    box-shadow: 0 0 0 0 rgba(236, 91, 8, 0.6);
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(236, 91, 8, 0.6);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(0.85);
+      box-shadow: 0 0 0 6px rgba(236, 91, 8, 0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-dot {
+      animation: none;
+    }
+  }
+
+  #activity-summary {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #d0d0d0;
+  }
+
+  #activity-repos {
+    font-size: 13px;
+    color: #888;
+    margin-top: 12px;
+    word-break: break-word;
+  }
+
+  #activity-updated {
+    font-size: 12px;
+    color: #888;
+    margin-top: 4px;
+  }
+
   /* --------------css for smaller screens--------------- */
 nav .fas{
     display: none;
@@ -301,7 +378,15 @@ nav .fas{
     }
     
     .tab-titles::-webkit-scrollbar-thumb {
-        background: #888; 
+        background: #888;
     }
-    
+
+    .activity-card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    #activity-summary {
+        font-size: 15px;
+    }
+
 }

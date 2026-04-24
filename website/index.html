@@ -19,6 +19,7 @@
                 <ul id="sidemenu">
                     <li><a href = "#header">Home</a></li>
                     <li><a href = "#about">About</a></li>
+                    <li><a href = "#working-on">Now<span class="pulse-dot" aria-hidden="true"></span></a></li>
                     <li><a href = "#projects">Projects</a></li>
                     <li><a href = "#contact">Contact</a></li>
                     <i class="fas fa-times" onclick="closemenu()"></i>
@@ -91,6 +92,18 @@
       </div>
   </div>
 </div>
+<!-- ----------working on---------- -->
+<div id="working-on">
+  <div class="container">
+    <h1 class="sub-title">Currently Working On</h1>
+    <div class="activity-card">
+      <p id="activity-summary">Loading recent activity…</p>
+      <p id="activity-repos"></p>
+      <p id="activity-updated"></p>
+    </div>
+  </div>
+</div>
+
 <!-- ----------projects---------- -->
 <div id="projects">
   <div class="container">
@@ -193,6 +206,33 @@ function expandCard(selectedCard) {
     content.classList.add('expanded');
   }
 }
+</script>
+
+<script>
+  fetch('data/activity.json')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('activity-summary').textContent = d.summary;
+      var reposEl = document.getElementById('activity-repos');
+      if (d.repos.length) {
+        reposEl.appendChild(document.createTextNode('Recent repos: '));
+        d.repos.forEach(function(repo, i) {
+          var a = document.createElement('a');
+          a.href = 'https://github.com/' + repo;
+          a.textContent = repo;
+          a.target = '_blank';
+          a.rel = 'noopener noreferrer';
+          reposEl.appendChild(a);
+          if (i < d.repos.length - 1) reposEl.appendChild(document.createTextNode(', '));
+        });
+      }
+      document.getElementById('activity-updated').textContent =
+        'Updated ' + new Date(d.updated_at).toLocaleDateString();
+    })
+    .catch(() => {
+      document.getElementById('activity-summary').textContent =
+        "Currently cooking up something so good it couldn't be fetched.";
+    });
 </script>
 
 <script>
