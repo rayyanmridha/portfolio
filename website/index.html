@@ -43,12 +43,14 @@
       <div class="about-col-2">
         <h1 class="sub-title">About me</h1>
         <p>My passion for tech has made me interested in its long-term uses and how it affects other people. I continue to learn computer science to understand the foundation of how programs are built. Someday I hope to utilize these skills to make apps that can either entertain, educate, etc.</p>
+        <div class="tab-titles-wrapper">
         <div class="tab-titles">
           <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
           <p class="tab-links" onclick="opentab('experience')">Experience</p>
           <p class="tab-links" onclick="opentab('education')">Education</p>
           <p class="tab-links" onclick="opentab('accolades')">Accolades</p>
           <p class="tab-links" onclick="opentab('links')">Links</p>
+        </div>
         </div>
         <div class="tab-contents active-tab" id="skills">
           <ul>
@@ -233,6 +235,21 @@ function expandCard(selectedCard) {
       document.getElementById('activity-summary').textContent =
         "Currently cooking up something so good it couldn't be fetched.";
     });
+</script>
+
+<script>
+  (function () {
+    var wrapper = document.querySelector('.tab-titles-wrapper');
+    var titles = document.querySelector('.tab-titles');
+    if (!wrapper || !titles) return;
+    function updateFades() {
+      wrapper.classList.toggle('show-left', titles.scrollLeft > 0);
+      wrapper.classList.toggle('show-right', titles.scrollLeft < titles.scrollWidth - titles.clientWidth - 1);
+    }
+    titles.addEventListener('scroll', updateFades);
+    window.addEventListener('resize', updateFades);
+    updateFades();
+  })();
 </script>
 
 <script>

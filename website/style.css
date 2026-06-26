@@ -99,9 +99,34 @@ nav ul li a:hover::after{
     font-weight: 600;
     color: #fff;
 }
+.tab-titles-wrapper {
+    position: relative;
+    margin: 20px 0 40px;
+}
+.tab-titles-wrapper::before,
+.tab-titles-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 40px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.tab-titles-wrapper::before {
+    left: 0;
+    background: linear-gradient(to right, #2e293a, transparent);
+}
+.tab-titles-wrapper::after {
+    right: 0;
+    background: linear-gradient(to left, #2e293a, transparent);
+}
+.tab-titles-wrapper.show-left::before { opacity: 1; }
+.tab-titles-wrapper.show-right::after { opacity: 1; }
 .tab-titles{
     display: flex;
-    margin: 20px 0 40px;
     color: #ec5b08;
 }
 .tab-links{
@@ -369,17 +394,12 @@ nav .fas{
     .tab-titles {
         display: flex;
         overflow-x: auto;
-        scrollbar-width: thin;
-        scrollbar-color: #888 transparent; 
+        scrollbar-width: none;
     }
-    
     .tab-titles::-webkit-scrollbar {
-        height: 5px;
+        display: none;
     }
     
-    .tab-titles::-webkit-scrollbar-thumb {
-        background: #888;
-    }
 
     .activity-card {
         padding: 20px;
