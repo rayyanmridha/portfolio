@@ -20,9 +20,22 @@ jobs:
         run: node scripts/generate-activity.mjs
 
       - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-          projectId: portfolio-8a946
-          channelId: live
+        env:
+          FIREBASE_SA_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+        run: |
+          CREDS_FILE="$RUNNER_TEMP/firebase-sa.json"
+          printf '%s' "$FIREBASE_SA_JSON" > "$CREDS_FILE"
+          export GOOGLE_APPLICATION_CREDENTIALS="$CREDS_FILE"
+
+          set +e
+          OUTPUT=$(npx firebase-tools@latest deploy --only hosting --project portfolio-8a946 --json 2>&1)
+          EXIT=$?
+          set -e
+          echo "$OUTPUT"
+
+          if echo "$OUTPUT" | grep -q "is the current active version"; then
+            echo "::notice::No content changes since last deploy — Firebase reports the current version is already live. Treating as success."
+            exit 0
+          fi
+
+          exit "$EXIT"
